@@ -46,8 +46,6 @@ app.get('/login', async (req, res) => {
     const username = req.query.userName;
     const password = req.query.password;
     const loginInfo = await Login.find();
-    // console.log(loginInfo.length);
-    // for (let i = 0; i <= 2; i++) {
         if (username === loginInfo[0].username && password === loginInfo[0].password) {
             res.render('success.ejs')
         } else {
@@ -80,22 +78,6 @@ app.get('/workshop', async (req, res) => {
 
     })
 })
-
-//create post
-
-// app.get('/create', async (req, res) => {
-//     const theTitle = req.query.title;
-//     const theContent = req.query.content;
-//     console.log(theContent);
-//     const newPost = new Blog({
-//         title: theTitle,
-//         slug: 'In this post...',
-//         published: true,
-//         content: theContent,
-//     })
-//     newPost.save();
-//     res.render('/')
-// })
 
 //listening on port
 app.listen(port, () => {

@@ -6,10 +6,10 @@
                         <div class="card-left">
                             <li>
                                 <h2 class="blog-title"><%= post.title %></h2>
-                                <h3 class="blog-content"><%= post.content.substring(0, 180) %>...</h3>
+                                <h3 class="blog-content"><%= post.slug.substring(0, 180) %>...</h3>
                             </li>
                         </div>
-                        <div class="blog-date"><%= post.createdAt.toDateString() %></div>
+                        <div class="blog-date"><%= post.created.toDateString() %></div>
                     </div>
                 </a>       
         <% }) %>
