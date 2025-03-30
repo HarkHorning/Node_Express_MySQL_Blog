@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>admin</title>
+</head>
+<body class="log-body">  
+    <section class="form-section">
+        <h1 class="page-title">Login</h1>
+        <div class="form-layout">
+            <form class="form-itself" action="/login" method="GET">
+                
+                <label for="userName"><b class="log-label">Username</b></label>
+                <input class="form-input" type="text" placeholder="Enter Name" name="userName">
+            
+                <label for="password"><b class="log-label">Password</b></label>
+                <input class="form-input" type="password" placeholder="Enter Password" name="password">
+            
+                <input type="submit" value="Login" class="sign-button">
+
+                <p class="create-option">Don't have an account? <a href="/createAccount" class="create-link">Create account</a></p>
+
+            </form>
+        </div>
+    </section>
+</body>
+</html>

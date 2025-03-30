@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>admin</title>
+</head>
+<body>
+    <svg class="svg-object">
+        <filter id="filter-effect">
+            <feTurbulence type="fractalNoise" baseFrequency="1"/>
+        </filter>
+    </svg>
+    <div class="filter-object"></div>
+    <section class="home-section">
+        <h1>Welcome!</h1>
+        <div class="form-layout">
+            <form class="form-itself" action="/login" method="GET">
+                <label for="userName"><b>Name</b></label>
+                <input class="form-input" type="text" placeholder="Enter Name" name="userName">
+              
+                <label for="Password"><b>Password</b></label>
+                <input placeholder="Password" class="form-input" name="Password" id="contentsinput"></input>
+
+                <input type="submit" value="Sign In" class="button-select">
+            </form>
+        </div>
+    </section>
+</body>
+</html>

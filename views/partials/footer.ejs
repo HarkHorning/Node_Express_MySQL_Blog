@@ -1,0 +1,12 @@
+<footer class="footer">
+    <p class="endContent">
+        End of post catalog. <span class="moreTo">More to come soon!</span>
+    </p>
+    <div class="footerBox">&copy; ContemporaryWizard <span id="date"></span></div>
+</footer>
+<script>
+    const htmlDate = document.getElementById("date");
+    const d = new Date()
+    let year = d.getFullYear();
+    htmlDate.innerHTML = year;
+</script>

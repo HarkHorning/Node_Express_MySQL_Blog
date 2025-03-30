@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ingrid Darling' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Contemporary Wizard</title>
+</head>
+<body>
+
+    <div class="filter-object"></div>
+
+    <svg class="svg-object">
+        <filter id="filter-effect">
+            <feTurbulence type="fractalNoise" baseFrequency="1"/>
+        </filter>
+    </svg>
+
+    <section class="about-section">
+
+        <%- include('./partials/header.ejs') %>
+        <!-- <h1>Hello, my name is Hark Horning</h1> -->
+        <p>
+            To quote the author, Arthur C. Clarke, who I have never read anything from, “Any sufficiently 
+            advanced technology is indistinguishable from magic.” The term “Clarke Tech,” is the term now 
+            used for such technologies. I think it’s not at all wrong to say that just about all technology 
+            we use today has components that could fall under this umbrella term. How many layers of seemingly 
+            arcane knowledge are needed to understand how what I am writing now will be recorded, stored, 
+            and finally sent to your screen? A lot, I think. 
+        </p>
+        <p>
+            I am fascinated by the new phenomenon of living parts of our life through technology that we don’t 
+            understand. Even the very curious among us only understands things to a certain extent. It is my 
+            plan to use this blog to, in part, expand your knowledge of the technology through writing about 
+            my various projects and hobbies and about the changing tech landscape. But mostly, I will use 
+            this blog to talk about anything and everything that my highly distractible brain can think of. 
+            Hopefully, you will enjoy the adventure.
+        </p>
+
+    </section>
+
+    <style>
+        .about-section {
+            margin-bottom: 4rem;
+            border-bottom: 2px solid black;
+        }
+        p {
+            line-height: 1.5rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</body>
+</html>

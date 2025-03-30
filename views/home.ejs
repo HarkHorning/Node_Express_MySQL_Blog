@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ingrid Darling' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Contemporary Wizard</title>
+</head>
+<body>
+
+    <div class="login-bar">
+        <div class="login-bar-content"> -- Best tech blog written by a wizard</div>
+        <div><%- include('./partials/signCheck.ejs') %></div>
+    </div>
+
+    <%- include('./partials/decor.ejs') %>
+
+    <section class="home-section">
+
+        <div class="filter-object"></div>
+
+        <%- include('./partials/header.ejs') %>
+
+        <%- include('./partials/about.ejs') %>
+        
+        <%- include('./partials/blogs.ejs') %>
+
+        <%- include('./partials/footer.ejs') %>
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<div class="blog-cards">
+    <ul class="list">
+        <% posts.forEach(post => { %>
+                <a href="/post/<%= post._id %>" >
+                    <div class="blog-card">
+                        <div class="card-left">
+                            <li>
+                                <h2 class="blog-title"><%= post.title %></h2>
+                                <h3 class="blog-content"><%= post.content.substring(0, 180) %>...</h3>
+                            </li>
+                        </div>
+                        <div class="blog-date"><%= post.createdAt.toDateString() %></div>
+                    </div>
+                </a>       
+        <% }) %>
+    </ul>
+    <div class="side-bar">
+        <form class="joinOutline">
+            <div class="alert">Coming Soon!</div>
+            <h1 class="joinEmailText">Join News Letter</h1>
+            <input name="" placeholder="Your email" class="email-search">
+        </form>
+        <div class="add">
+            <img src="" alt="sponsored add">
+        </div>
+    </div>
+</div>
