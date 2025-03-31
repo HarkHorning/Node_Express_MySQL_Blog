@@ -28,8 +28,8 @@ app.get('/search', async (req, res) => {
 
 //single post
 app.get('/post/:id', async (req, res) => {
-    let slug = req.params.id;
-    const data = await Blog.findById( { _id: slug } );
+    let id = req.params.id;
+    const data = await getThisPost( { _id: id } );
     res.render('post.ejs', {
         data
     })
