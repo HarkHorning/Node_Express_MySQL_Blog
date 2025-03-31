@@ -1,53 +1,17 @@
-require('dotenv').config();
-const express = require('express');
+import express from "express";
+import { getPosts, getThisPost } from "./mysql.js"
 const app = express();
 const port = process.env.PORT || 3000;
-const path = require('path');
-
-// import Blog from './models/Blog';
-const Blog = require("./models/Blog")
-const Login = require("./models/Login")
-const mongoose = require('mongoose');
-const link = process.env.MONGODB_URI
-
-async function connectDB() { 
-    try {
-        await mongoose.connect(link);
-        console.log("Yeah!!!");
-    } catch (error) {
-        console.error(error);
-    }
-}
-connectDB()
-
-
-const article = new Blog({
-    title: 'By Popular Demand, More Placeholder Content!',
-    slug: '',
-    published: true,
-    author: 'Hark Horning',
-    content: 'The outpooring of people asking for more placeholder content is truly humbling. So, in the interest of pleasing my non-existant readership, here you go. Placeholder content.',
-    contentTwo: '',
-    contentThree: '',
-    contentFour: '',
-    createdAt: Date.now(),
-    editedAt: Date.now()
-})
-// article.save();
-
-
-
-//end of mongoose stuff
-
-//root public
-app.use(express.static(path.join(__dirname, '/public')));
-
-
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
 
+app.use((err, req, res, next) => {
+    console.error("Ahhhh", err.stack)
+    res.status(500).send("Darn!")
+})
 
 app.get('/', async (req, res) => {
-    const posts = await Blog.find();
+    const posts = await getPosts();
     res.render('home.ejs', {
         posts
     });
@@ -63,10 +27,9 @@ app.get('/search', async (req, res) => {
 })
 
 //single post
-
 app.get('/post/:id', async (req, res) => {
-    let slug = req.params.id;
-    const data = await Blog.findById( { _id: slug } );
+    let id = req.params.id;
+    const data = await getThisPost( { _id: id } );
     res.render('post.ejs', {
         data
     })
@@ -83,8 +46,6 @@ app.get('/login', async (req, res) => {
     const username = req.query.userName;
     const password = req.query.password;
     const loginInfo = await Login.find();
-    // console.log(loginInfo.length);
-    // for (let i = 0; i <= 2; i++) {
         if (username === loginInfo[0].username && password === loginInfo[0].password) {
             res.render('success.ejs')
         } else {
@@ -117,22 +78,6 @@ app.get('/workshop', async (req, res) => {
 
     })
 })
-
-//create post
-
-// app.get('/create', async (req, res) => {
-//     const theTitle = req.query.title;
-//     const theContent = req.query.content;
-//     console.log(theContent);
-//     const newPost = new Blog({
-//         title: theTitle,
-//         slug: 'In this post...',
-//         published: true,
-//         content: theContent,
-//     })
-//     newPost.save();
-//     res.render('/')
-// })
 
 //listening on port
 app.listen(port, () => {

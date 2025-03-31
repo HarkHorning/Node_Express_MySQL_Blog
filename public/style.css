@@ -17,7 +17,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(236, 225, 211);    
     min-height: 100svh;
     position: relative;
     width: 100%;
@@ -32,7 +31,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
-
 .login-bar-content {
     font-size: 1rem;
 }
@@ -69,17 +67,7 @@ body {
     opacity: 1;
     z-index: -1;
 }
-.tower-background {
-    position: absolute;
-    bottom: 0;
-    right: 35%;
-    opacity: 0.5;
-}
-.svg-object {
-    position: absolute;
-    height: 0;
-    width: 0;
-}
+.svg-object { position: absolute; }
 .filter-object {
     position: absolute;
     top: 0;
@@ -114,7 +102,8 @@ body {
     border-bottom: 2px solid rgb(0, 0, 0);
 }
 .contemp {
-    margin-top: 0.25rem;
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-top: 0.75rem;
     font-size: 2.5rem;
     letter-spacing: 0.5rem;
     font-weight: 200;
@@ -218,39 +207,35 @@ body {
     width: 100%;
     margin-top: 1rem;
     border-left: 1px solid rgba(211, 211, 211, 0.568);   
-    display: flex;
-}
-.list {
-    width: 75%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
 }
 .blog-card {
     height: 175px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.75rem;
     list-style: none;
+    padding: 0rem 1rem 0.5rem 1rem;
     display: flex;
-    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.blog_title_date {
+    display: flex;
+    justify-content: space-between;
 }
 .blog-title {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    padding-left: 0.5rem;
 }
 .blog-date {
     font-size: 1rem;
     font-weight: 200;
     color: rgba(240, 240, 240, 0.479);
-    width: 25%;
-    position: absolute;
-    right: 0;
 }
 .blog-content {
     font-size: 1rem;
-    line-height: 1.5rem;
     font-weight: 100;
-    width: 96%;
-    padding-left: 0.5rem;
+    width: full;
 }
 .side-bar {
     display: flex;
@@ -264,7 +249,6 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     padding: 5px;
-
 }
 .alert {
     width: 100%;
@@ -281,7 +265,6 @@ body {
     margin-top: 0.5rem;
     text-align: start;
     opacity: 0.5;
-
 }
 .joinEmailText {
     font-size: 0.9rem;
@@ -305,7 +288,7 @@ body {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-p {
+.about-content {
     line-height: 1.5rem;
     margin-top: 1.5rem;
 }
@@ -371,7 +354,6 @@ p {
     border-radius: 5px;
     color: black;
     margin-bottom: 0.75rem;
-
 }
 .not-finished {
     opacity: 0.6;
@@ -397,7 +379,7 @@ p {
     }
     .contemp {
         font-size: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0rem;
         letter-spacing: 0.25rem;
     }
 }
@@ -414,7 +396,7 @@ p {
     }
     .contemp {
         font-size: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0rem;
         letter-spacing: 0.25rem;
     }
     .wiz {
@@ -426,12 +408,11 @@ p {
     }
     .blog-card {
         height: 200px;
-        margin-bottom: 1rem;
         list-style: none;
         display: flex;
     }
     .list {
-        width: 100%;
+        width: full;
     }
     .side-bar {
         display: none;
