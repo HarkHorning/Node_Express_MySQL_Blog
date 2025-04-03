@@ -1,5 +1,8 @@
 import express from "express";
-import { getPosts, getThisPost } from "./mysql.js"
+import { 
+    getPosts, 
+    // getThisPost 
+} from "./mysql.js"
 const app = express();
 const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
@@ -33,7 +36,6 @@ app.get('/post/:id', async (req, res) => {
     res.render('post.ejs', {
         data
     })
-
 })
 
 //login
