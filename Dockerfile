@@ -4,7 +4,7 @@
 FROM node:alpine
 
 # Directory
-WORKDIR /blog-site
+WORKDIR /BLOG_MYSQL
 
 # package
 COPY package*.json ./

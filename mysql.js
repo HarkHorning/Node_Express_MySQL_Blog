@@ -22,19 +22,17 @@ const pool = mysql.createPool({
 // }
 
 export async function getPosts() {
-    // try {
+    try {
         const [result] = await pool.promise().query("SELECT * FROM posts");
         return result
-        // await closePool(pool);
-        // process.exit(0);
-    // } catch (err) {console.error("YOUR ERROR: getPosts()", err)}
+    } catch (err) {console.error("YOUR ERROR: getPosts()", err)}
 } const posts = await getPosts()
 
-// export async function getThisPost(id) {
-//     try {
-//         const [result] = await pool.promise().query(
-//             "SELECT * FROM posts WHERE post_id = ?", [id]
-//         );
-//         return result
-//     } catch (err) {console.error("THIS IS YOUR ERROR: getThisPost()", err)}
-// } const post = await getThisPost(1)
+export async function getThisPost(id) {
+    try {
+        const [result] = await pool.promise().query(
+            "SELECT * FROM posts WHERE post_id = ?", [id]
+        );
+        return result
+    } catch (err) {console.error("THIS IS YOUR ERROR: getThisPost()", err)}
+} const post = await getThisPost(1)
