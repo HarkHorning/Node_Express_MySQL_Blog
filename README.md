@@ -1,13 +1,15 @@
-# blog_mysql
-Converting an existing project to MySQL and containerizing it with docker.
+# Node, Express, MySQL Blog Repo
 
-<!-- docker-compose up -d --remove-orphans -->
+A full stack project for my blog Contemporary Wizard. 
 
-<!-- To access on localhost -->
-docker run -p 8080:8080 blog_mysql
+## Technology Used
 
-<!-- To build -->
-docker build -t blog_mysql .
+EJS/JavaScript
 
-<!-- To run container -->
-docker container run blog_mysql    
+Node
+
+Express
+
+MySQL
+
+Docker
