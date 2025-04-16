@@ -1,10 +1,11 @@
 import express from "express";
 import { 
     getPosts, 
-    // getThisPost 
+    getThisPost 
 } from "./mysql.js"
+
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
@@ -14,10 +15,14 @@ app.use((err, req, res, next) => {
 })
 
 app.get('/', async (req, res) => {
-    const posts = await getPosts();
-    res.render('home.ejs', {
-        posts
-    });
+    try {
+        const posts = await getPosts();
+        res.render('home.ejs', {
+            posts
+        });
+    } catch (error) {
+        console.log("YOUR ERROR SIR: ", error)
+    }
 })
 
 app.get('/search', async (req, res) => {

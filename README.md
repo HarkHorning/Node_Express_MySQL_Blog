@@ -1,8 +1,13 @@
 # blog_mysql
 Converting an existing project to MySQL and containerizing it with docker.
 
-docker-compose up -d --remove-orphans
+<!-- docker-compose up -d --remove-orphans -->
 
+<!-- To access on localhost -->
+docker run -p 8080:8080 blog_mysql
 
+<!-- To build -->
+docker build -t blog_mysql .
 
-        <%- include('./partials/blogs.ejs') %>
+<!-- To run container -->
+docker container run blog_mysql    

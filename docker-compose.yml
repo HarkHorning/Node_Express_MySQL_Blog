@@ -1,16 +1,15 @@
 
-
 services:
   db:
     image: mysql
     restart: always
-    # ports:
-    #   - "3307:8080"
+    ports:
+      - "33061:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: FridgeGoo323#
-      MYSQL_DATABASE: wiz_blog_db
-      # MYSQL_USER: root
-      # MYSQL_PASSWORD: FridgeGoo323#
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: 
+      # MYSQL_USER: 
+      # MYSQL_PASSWORD: 
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       retries: 10
@@ -27,11 +26,11 @@ services:
     ports:
       - 8080:8081
     environment:
-      DB_HOST: 127.0.0.1
-      DB_USER: root
-      DB_PASSWORD: FridgeGoo323#
-      DB_NAME: wiz_blog_db
-      DB_PORT: 3306
+      DB_HOST: 
+      DB_USER: 
+      DB_PASSWORD: 
+      DB_NAME: 
+      DB_PORT: 
     depends_on:
       - db
 volumes:
@@ -39,3 +38,4 @@ volumes:
 networks:
   nodejs-mysql-network:
     name: nodejs-mysql-network
+    
