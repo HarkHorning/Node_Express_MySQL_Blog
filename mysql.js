@@ -5,6 +5,7 @@ const { host, user, password, db } = process.env;
 
 const pool = mysql.createPool({
     host: host,
+    // host: "localhost",
     user: user,
     password: password,
     database: db,
